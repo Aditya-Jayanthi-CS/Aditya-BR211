@@ -1,0 +1,34 @@
+import time
+
+
+cur_sec = int(input("sec: "))
+cur_min = int(input("min: "))
+cur_hour = int(input("hr: "))
+cur_day = int(input("day: "))
+
+i=0
+
+while True:
+    time.sleep(1)
+    i+=1
+    sec = 60 - cur_sec - i
+    min = 59 - cur_min
+    hour = 23 - cur_hour
+    day = 13 - cur_day
+
+    if sec<=0:
+        i=0
+        cur_sec=0
+        cur_min+=1
+
+    if min<=0:
+        i=0
+        cur_min=0
+        cur_hour+=1
+    
+    if hour<=0:
+        i=0
+        cur_hour=0
+        cur_day+=1
+
+    print(day, " days", hour, " hours", min, " mins", sec, "secs")
